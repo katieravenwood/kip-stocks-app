@@ -10,7 +10,7 @@ from ta.trend import MACD
 from ta.momentum import RSIIndicator
 
 # SIDEBAR #
-option = st.sidebar.selectbox('Select one symbol', ( 'AAPL', 'MSFT',"SPY",'WMT'))
+option = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC'))
 import datetime
 today = datetime.date.today()
 before = today - datetime.timedelta(days=700)
