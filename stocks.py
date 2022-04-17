@@ -11,8 +11,8 @@ from ta.momentum import RSIIndicator
 
 # DASHBOARD HEADERS ADN TITLES#
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
-st.title('Kiplinger 22 Stocks for 2022')
-st.subheader('with Predictive Analysis Through 2023')
+st.title('Stock Price Predictions')
+st.header('Based on stocks from <i>Kiplinger 22 Stocks for 2022</i>')
 
 # SIDEBAR #
 st.sidebar.header('Choose A Stock')
