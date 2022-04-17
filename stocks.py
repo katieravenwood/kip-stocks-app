@@ -4,15 +4,19 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+import datetime
+from datetime import date, timedelta
+today = date.today()
+
 import yfinance as yf # https://pypi.org/project/yfinance/
 from ta.volatility import BollingerBands
 from ta.trend import MACD
 from ta.momentum import RSIIndicator
 
-# DASHBOARD HEADERS ADN TITLES#
+# DASHBOARD HEADERS AND TITLES#
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 st.title('Stock Price Predictions')
-st.header('Based on stocks from <i>Kiplinger 22 Stocks for 2022</i>')
+st.header('Based on stocks from Kiplinger 22 Stocks for 2022')
 
 # SIDEBAR #
 st.sidebar.header('Choose A Stock')
