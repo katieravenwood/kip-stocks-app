@@ -4,10 +4,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import datetime
-from datetime import date, timedelta
-today = date.today()
-
 import yfinance as yf # https://pypi.org/project/yfinance/
 from ta.volatility import BollingerBands
 from ta.trend import MACD
