@@ -11,10 +11,11 @@ from ta.momentum import RSIIndicator
 
 # DASHBOARD #
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
-st.title('Stock Market Dashboard')
+st.title('Kiplinger 22 Stocks for 2022')
+st.header('with Predictive Analysis Through 2023')
 
 # SIDEBAR #
-option = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC'))
+option = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC', 'BABA', 'LFUS', 'SCHW', 'ABC', 'FAGAX', 'AGK', 'OGK', 'AMZN', 'PSA', 'BAC', 'CVS', 'SBUX', 'CCI', 'TROW', 'CVX', 'O', 'EPR'))
 import datetime
 today = datetime.date.today()
 before = today - datetime.timedelta(days=700)
