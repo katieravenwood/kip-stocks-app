@@ -9,6 +9,10 @@ from ta.volatility import BollingerBands
 from ta.trend import MACD
 from ta.momentum import RSIIndicator
 
+# DASHBOARD #
+st.set_page_config(layout="wide", initial_sidebar_state="expanded")
+st.title('Stock Market Dashboard')
+
 # SIDEBAR #
 option = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC'))
 import datetime
