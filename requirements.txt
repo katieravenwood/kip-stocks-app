@@ -4,5 +4,4 @@ numpy==1.19.5
 matplotlib==3.3.4
 yfinance==0.1.70
 ta==0.10.1
-pystan==2.17.1
 fbprophet==0.7.1
