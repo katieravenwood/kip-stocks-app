@@ -9,13 +9,14 @@ from ta.volatility import BollingerBands
 from ta.trend import MACD
 from ta.momentum import RSIIndicator
 
-# DASHBOARD #
+# DASHBOARD HEADERS ADN TITLES#
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 st.title('Kiplinger 22 Stocks for 2022')
 st.header('with Predictive Analysis Through 2023')
+st.sidebar.header('Choose A Stock')
 
 # SIDEBAR #
-option = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC', 'BABA', 'LFUS', 'SCHW', 'ABC', 'FAGAX', 'AGK', 'OGK', 'AMZN', 'PSA', 'BAC', 'CVS', 'SBUX', 'CCI', 'TROW', 'CVX', 'O', 'EPR'))
+stocklist = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC', 'BABA', 'LFUS', 'SCHW', 'ABC', 'FAGAX', 'AGK', 'OGK', 'AMZN', 'PSA', 'BAC', 'CVS', 'SBUX', 'CCI', 'TROW', 'CVX', 'O', 'EPR'))
 import datetime
 today = datetime.date.today()
 before = today - datetime.timedelta(days=700)
@@ -28,7 +29,7 @@ else:
 
 # STOCK DATA #
 # Download data
-df = yf.download(option,start= start_date,end= end_date, progress=False)
+df = yf.download(stocklist,start= start_date,end= end_date, progress=False)
 
 # Bollinger Bands
 indicator_bb = BollingerBands(df['Close'])
