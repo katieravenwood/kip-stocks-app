@@ -29,7 +29,8 @@ else:
 
 # STOCK DATA #
 # Download data
-
+stock_ticker = yf.Ticker(stocklist)
+stock_info = stock_ticker.info
 df = yf.download(stocklist,start= start_date,end= end_date, progress=False)
 
 # Bollinger Bands
