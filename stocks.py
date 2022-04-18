@@ -12,7 +12,7 @@ from ta.momentum import RSIIndicator
 # DASHBOARD HEADERS AND TITLES#
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 st.title('Stock Prices')
-st.header('Based on stocks from Kiplinger 22 Stocks for 2022')
+st.markdown('### Based on stocks from [*Kiplinger 22 Stocks for 2022*](https://www.kiplinger.com/investing/stocks/stocks-to-buy/603893/22-best-stocks-to-buy-for-2022)')
 
 # SIDEBAR #
 st.sidebar.header('Choose A Stock')
@@ -46,6 +46,9 @@ macd = MACD(df['Close']).macd()
 rsi = RSIIndicator(df['Close']).rsi()
 
 # MAIN PAGE #
+
+
+
 # Plot the prices and the bolinger bands
 st.write('Stock Bollinger Bands')
 st.line_chart(bb)
