@@ -48,7 +48,7 @@ rsi = RSIIndicator(df['Close']).rsi()
 # MAIN PAGE #
 
 # Display stock name and symbol
-st.write(stocklist.info)
+st.write(stocklist)
 
 # Plot the prices and the bolinger bands
 st.write('Stock Bollinger Bands')
