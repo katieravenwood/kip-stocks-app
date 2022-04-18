@@ -11,7 +11,7 @@ from ta.momentum import RSIIndicator
 
 # DASHBOARD HEADERS AND TITLES#
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
-st.title('Stock Price Predictions')
+st.title('Stock Prices')
 st.header('Based on stocks from Kiplinger 22 Stocks for 2022')
 
 # SIDEBAR #
