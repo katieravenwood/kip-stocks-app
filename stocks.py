@@ -51,7 +51,7 @@ rsi = RSIIndicator(df['Close']).rsi()
 st.write(stocklist)
 
 # Plot the prices and the bolinger bands
-st.write('Stock Bollinger Bands')
+st.write(stocklist 'Bollinger Bands')
 st.line_chart(bb)
 
 progress_bar = st.progress(0)
