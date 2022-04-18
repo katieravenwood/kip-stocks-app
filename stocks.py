@@ -31,6 +31,7 @@ else:
 # Download data
 stock_ticker = yf.Ticker(stocklist)
 stock_info = stock_ticker.info
+stock_name = stock_info["shortName"]
 df = yf.download(stocklist,start= start_date,end= end_date, progress=False)
 
 # Bollinger Bands
@@ -49,6 +50,7 @@ rsi = RSIIndicator(df['Close']).rsi()
 # MAIN PAGE #
 
 # Display stock name and symbol
+st.write(stock_name)
 st.write(stocklist)
 
 # Plot the prices and the bolinger bands
