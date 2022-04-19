@@ -23,7 +23,7 @@ before = today - datetime.timedelta(days=700)
 b1 = before.strftime("%d %B %Y")
 start_date = st.sidebar.date_input('Start date', b1)
 s1 = start_date.strftime("%d %B %Y")
-end_date = st.sidebar.date_input('End date', s1)
+end_date = st.sidebar.date_input('End date', t1)
 e1 = end_date.strftime("%d %B %Y")
 st.sidebar.header('Displaying:')
 if start_date < end_date:
