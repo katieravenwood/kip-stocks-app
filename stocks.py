@@ -40,13 +40,6 @@ df = yf.download(stocklist,start= start_date,end= end_date, progress=False)
 df['Date'] = df.index
 
 # Candlestick Chart
-stocklist_candlestick = go.Figure(df=[go.Candlestick(x=df["Date"],
-                                        open=df["Open"], 
-                                        high=df["High"],
-                                        low=df["Low"], 
-                                        close=df["Close"])])
-stocklist_candlestick.update_layout(xaxis_rangeslider_visible=False)
-stocklist_candlestick.show()
 
 # Bollinger Bands
 indicator_bb = BollingerBands(df['Close'])
@@ -70,7 +63,7 @@ rsi = RSIIndicator(df['Close']).rsi()
 st.header(stock_name + ' (' + stocklist + ')')
 
 # Display plotly Candlestick chart
-st.plotly_chart('stocklist_candlestick')
+
 
 # Plot the prices and the bollinger bands
 st.subheader('Value with Bollinger Bands')
