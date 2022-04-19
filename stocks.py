@@ -68,7 +68,7 @@ rsi = RSIIndicator(df['Close']).rsi()
 st.header(stock_name + ' (' + stocklist + ')')
 
 # Display plotly Candlestick chart
-st.plotly('stocklist_candlestick')
+st.plotly_chart('stocklist_candlestick')
 
 # Plot the prices and the bollinger bands
 st.subheader('Value with Bollinger Bands')
