@@ -45,7 +45,7 @@ fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 high=df['High'],
                 low=df['Low'],
                 close=df['Close'])])
-fig.update_layout(xaxis_rangeslider_visible=False)
+fig.update_layout(xaxis_rangeslider_visible='slider' in value)
 fig.show()
 
 # Bollinger Bands
@@ -70,6 +70,7 @@ rsi = RSIIndicator(df['Close']).rsi()
 st.header(stock_name + ' (' + stocklist + ')')
 
 # Display plotly Candlestick chart
+st.subheader('Daily Price Movement')
 st.plotly_chart(fig)
 
 # Plot the prices and the bollinger bands
