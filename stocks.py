@@ -45,6 +45,8 @@ stocklist_candlestick = go.Figure(data=[go.Candlestick(x=df['Date'],
                                         high=df["High"],
                                         low=df["Low"], 
                                         close=df["Close"])])
+figure.update_layout(xaxis_rangeslider_visible=False)
+figure.show()
 
 # Bollinger Bands
 indicator_bb = BollingerBands(df['Close'])
