@@ -45,7 +45,7 @@ fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 high=df['High'],
                 low=df['Low'],
                 close=df['Close'])])
-
+fig.update_layout(xaxis_rangeslider_visible=False)
 fig.show()
 
 # Bollinger Bands
