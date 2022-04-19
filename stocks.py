@@ -40,7 +40,7 @@ df = yf.download(stocklist,start= start_date,end= end_date, progress=False)
 df['Date'] = df.index
 
 # Candlestick Chart
-stocklist_candlestick = go.Figure(data=[go.Candlestick(x=df['Date'],
+stocklist_candlestick = go.Figure(data=[go.Candlestick(x=df["Date"],
                                         open=df["Open"], 
                                         high=df["High"],
                                         low=df["Low"], 
