@@ -18,9 +18,7 @@ st.markdown('Based on stocks from [*Kiplinger 22 Stocks for 2022*](https://www.k
 st.sidebar.header('Choose A Stock')
 stocklist = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC', 'BABA', 'LFUS', 'SCHW', 'ABC', 'FAGAX', 'AGK', 'OGK', 'AMZN', 'PSA', 'BAC', 'CVS', 'SBUX', 'CCI', 'TROW', 'CVX', 'O', 'EPR'))
 today = datetime.date.today()
-t1 = today.strftime("%d %B %Y")
 before = today - datetime.timedelta(days=700)
-b1 = before.strftime("%d %B %Y")
 start_date = st.sidebar.date_input('Start date', before)
 s1 = start_date.strftime("%d %B %Y")
 end_date = st.sidebar.date_input('End date', today)
@@ -57,10 +55,10 @@ rsi = RSIIndicator(df['Close']).rsi()
 # MAIN PAGE #
 
 # Display stock name and symbol
-st.header(stock_name)
+st.header(stock_name + ' (' + stocklist + ')')
 st.subheader(stocklist)
 
-# Plot the prices and the bolinger bands
+# Plot the prices and the bollinger bands
 st.subheader('Value with Bollinger Bands')
 st.line_chart(bb)
 
