@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-from datetime import datetime
+import datetime
 import yfinance as yf # https://pypi.org/project/yfinance/
 from ta.volatility import BollingerBands
 from ta.trend import MACD
