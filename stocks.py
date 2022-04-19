@@ -18,14 +18,14 @@ st.markdown('Based on stocks from [*Kiplinger 22 Stocks for 2022*](https://www.k
 st.sidebar.header('Choose A Stock')
 stocklist = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC', 'BABA', 'LFUS', 'SCHW', 'ABC', 'FAGAX', 'AGK', 'OGK', 'AMZN', 'PSA', 'BAC', 'CVS', 'SBUX', 'CCI', 'TROW', 'CVX', 'O', 'EPR'))
 today = datetime.date.today()
-t1 = today.strftime("%d %B %Y")
 before = today - datetime.timedelta(days=700)
-b1 = before.strftime("%d %B %Y")
-start_date = st.sidebar.date_input('Start date', b1)
-end_date = st.sidebar.date_input('End date', t1)
+start_date = st.sidebar.date_input('Start date', before)
+s1 = start_date.strftime("%d %B %Y")
+end_date = st.sidebar.date_input('End date', today)
+e1 = end_date.strftime("%d %B %Y")
 st.sidebar.header('Displaying:')
 if start_date < end_date:
-    st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
+    st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (s1, e1))
 else:
     st.sidebar.error('Error: End date must fall after start date.')
 
