@@ -37,6 +37,7 @@ stock_ticker = yf.Ticker(stocklist)
 stock_info = stock_ticker.info
 stock_name = stock_info["shortName"]
 df = yf.download(stocklist,start= start_date,end= end_date, progress=False)
+df['Date'] = df.index
 
 # Candlestick Chart
 stocklist_candlestick = go.Figure(data=[go.Candlestick(x=df[0],
