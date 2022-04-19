@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 import datetime
 import yfinance as yf # https://pypi.org/project/yfinance/
 from ta.volatility import BollingerBands
@@ -30,11 +31,19 @@ else:
     st.sidebar.error('Error: End date must fall after start date.')
 
 # STOCK DATA #
+
 # Download data
 stock_ticker = yf.Ticker(stocklist)
 stock_info = stock_ticker.info
 stock_name = stock_info["shortName"]
 df = yf.download(stocklist,start= start_date,end= end_date, progress=False)
+
+# Candlestick Chart
+stocklist_candlestick = go.Figure(data=[go.Candlestick(x=df[0],
+                                        open=df["Open"], 
+                                        high=df["High"],
+                                        low=df["Low"], 
+                                        close=df["Close"])])
 
 # Bollinger Bands
 indicator_bb = BollingerBands(df['Close'])
@@ -56,7 +65,9 @@ rsi = RSIIndicator(df['Close']).rsi()
 
 # Display stock name and symbol
 st.header(stock_name + ' (' + stocklist + ')')
-st.subheader(stocklist)
+
+# Display plotly Candlestick chart
+st.plotly('stocklist_candlestick')
 
 # Plot the prices and the bollinger bands
 st.subheader('Value with Bollinger Bands')
