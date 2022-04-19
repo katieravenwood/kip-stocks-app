@@ -18,7 +18,7 @@ st.markdown('Based on stocks from [*Kiplinger 22 Stocks for 2022*](https://www.k
 st.sidebar.header('Choose A Stock')
 stocklist = st.sidebar.selectbox('Select one symbol', ( 'DIS', 'UBER','QUASX','IAC', 'DXC', 'BABA', 'LFUS', 'SCHW', 'ABC', 'FAGAX', 'AGK', 'OGK', 'AMZN', 'PSA', 'BAC', 'CVS', 'SBUX', 'CCI', 'TROW', 'CVX', 'O', 'EPR'))
 today = datetime.date.today()
-t1 = start_date.strftime("%d %B %Y")
+t1 = today.strftime("%d %B %Y")
 before = t1 - datetime.timedelta(days=700)
 start_date = st.sidebar.date_input('Start date', before)
 end_date = st.sidebar.date_input('End date', t1)
