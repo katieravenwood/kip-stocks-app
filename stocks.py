@@ -25,7 +25,7 @@ end_date = st.sidebar.date_input('End date', today)
 e1 = end_date.strftime("%d %B %Y")
 st.sidebar.header('Displaying:')
 if start_date < end_date:
-    st.sidebar.success('Start date: `%s`\n\nEnd date:`%s`' % (s1, e1))
+    st.sidebar.success('Start date:  `%s`\n\nEnd date:  `%s`' % (s1, e1))
 else:
     st.sidebar.error('Error: End date must fall after start date.')
 
