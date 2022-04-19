@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-import datetime
+from datetime import datetime
 import yfinance as yf # https://pypi.org/project/yfinance/
 from ta.volatility import BollingerBands
 from ta.trend import MACD
@@ -40,6 +40,13 @@ df = yf.download(stocklist,start= start_date,end= end_date, progress=False)
 df['Date'] = df.index
 
 # Candlestick Chart
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
+                open=df['Open'],
+                high=df['High'],
+                low=df['Low'],
+                close=df['Close'])])
+
+fig.show()
 
 # Bollinger Bands
 indicator_bb = BollingerBands(df['Close'])
@@ -63,7 +70,7 @@ rsi = RSIIndicator(df['Close']).rsi()
 st.header(stock_name + ' (' + stocklist + ')')
 
 # Display plotly Candlestick chart
-
+st.plotly_chart(fig)
 
 # Plot the prices and the bollinger bands
 st.subheader('Value with Bollinger Bands')
