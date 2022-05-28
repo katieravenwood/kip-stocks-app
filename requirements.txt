@@ -1,6 +1,6 @@
 streamlit==1.8.1
 pandas==1.2.4
-numpy==1.19.5
+numpy==1.21.0
 matplotlib==3.3.4
 yfinance==0.1.70
 ta==0.10.1
