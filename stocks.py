@@ -60,19 +60,17 @@ macd = MACD(df['Close']).macd()
 # Resistence Strength Indicator
 rsi = RSIIndicator(df['Close']).rsi()
 
-# PREDICTIONS # 
-
 
 # MAIN PAGE #
 
 # Display stock name and symbol
 st.header(stock_name + ' (' + stocklist + ')')
 
-# Display plotly Candlestick chart
+# Display plotly candlestick chart
 st.subheader('Daily Price Movement')
 st.plotly_chart(fig)
 
-# Plot the prices and the bollinger bands
+# Plot prices and the bollinger bands
 st.subheader('Value with Bollinger Bands')
 st.line_chart(bb)
 
@@ -86,6 +84,6 @@ st.area_chart(macd)
 st.subheader('Relative Strength Index (RSI)')
 st.line_chart(rsi)
 
-# Data of recent days
+# Data for recent dates
 st.subheader('Recent data ')
 st.dataframe(df.tail(10))
